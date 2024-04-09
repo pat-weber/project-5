@@ -6,7 +6,7 @@ import json
 
 st.header('Quilometragem de carros usados')
 
-car_data = pd.read_csv('/Users/User/Documents/DS/project-5/vehicles.csv')
+car_data = pd.read_csv('vehicles.csv')
 
 
 hist_button = st.button('Criar histograma') # criar um botão
