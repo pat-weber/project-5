@@ -8,9 +8,6 @@ st.header('Quilometragem de carros usados')
 
 car_data = pd.read_csv('/Users/User/Documents/DS/project-5/vehicles.csv')
 
-data = car_data.to_dict(orient='records')
-
-json_data = json.dumps(data)
 
 hist_button = st.button('Criar histograma') # criar um botão
      
@@ -19,7 +16,7 @@ if hist_button: # se o botão for clicado
          st.write('Criando um histograma para o conjunto de dados de anúncios de vendas de carros')
          
          # criar um histograma
-         fig = px.histogram(json_data, x="odometer")
+         fig = px.histogram(car_data, x="odometer")
      
          # exibir um gráfico Plotly interativo
          st.plotly_chart(fig, use_container_width=True)
@@ -31,7 +28,7 @@ if graph_button: # se o botão for clicado
          st.write('Criando um gráfico de dispersão para o conjunto de dados de anúncios de vendas de carros')
          
          # criar um gráfico de dispersão
-         fig = px.scatter(json_data, x="odometer", y="price")
+         fig = px.scatter(car_data, x="odometer", y="price")
      
          # exibir um gráfico Plotly interativo
          st.plotly_chart(fig, use_container_width=True)
